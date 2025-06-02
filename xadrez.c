@@ -1,32 +1,243 @@
 #include <stdio.h>
+int main () {
 
-// Desafio de Xadrez - MateCheck
-// Este código inicial serve como base para o desenvolvimento do sistema de movimentação das peças de xadrez.
-// O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
+    //variaveis:
+    int torre, opcao, direita, esquerda, cima, baixo, direcao, diagonaldc, diagonalec, diagonaldb, diagonaleb;
+    int bispo = 1;
+    int rainha = 1;
 
-int main() {
-    // Nível Novato - Movimentação das Peças
-    // Sugestão: Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
+    //interagindo com o menu:
+    printf("Bem vindo ao jogo\n\n");
+    printf("1-Iniciar\n2-Regras\n3-Sair\n");
+    printf("Selecione a opção desejada:");
+    scanf("%d", &opcao);
 
-    // Implementação de Movimentação do Bispo
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação do Bispo em diagonal.
+    switch (opcao)
+    {
+        case 1:
+            //codigo para torre:
+            printf("Pra qual direção voçê deseja que a torre se mova?\n");
+            printf("1-Direita\n2-Esquerda\n3-Cima\n4-baixo\n");
+            printf("Selecione a opção desejada:");
+            scanf("%d", &direcao);
+            //codigo para a torre:
+            if(direcao == 1)
+            {
+                printf("Quantas casas voce quer que a torre se mova para direita(max 7 casas)?\n");
+                scanf("%d", &direita);
+                
+                for (torre = 1; torre <= direita; torre ++)
+                {
+                    printf("Torre se movendo: %d casa para direita\n", torre);
+                }
+                
+            } else if (direcao == 2)
+            {
+                printf("Quantas casas voce quer que a torre se mova para esquerda(max 7 casas)?\n");
+                scanf("%d", &esquerda);
 
-    // Implementação de Movimentação da Torre
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Torre para a direita.
+                for (torre = 1; torre <= esquerda; torre ++)
+                {
+                    printf("Torre se movendo: %d casa para esquerda\n", torre);
+                }
 
-    // Implementação de Movimentação da Rainha
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Rainha para a esquerda.
+            } else if (direcao == 3)
+            {
+                printf("Quantas casas voce quer que a torre se mova para cima(max 7 casas)?\n");
+                scanf("%d", &cima);
 
-    // Nível Aventureiro - Movimentação do Cavalo
-    // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
-    // Um loop pode representar a movimentação horizontal e outro vertical.
+                for (torre = 1; torre <= cima; torre ++)
+                {
+                    printf("Torre se movendo: %d casa para cima\n", torre);
+                }
+                
+            } else if (direcao == 4)
+            {
+                printf("Quantas casas voce quer que a torre se mova para baixo(max 7 casas)?\n");
+                scanf("%d", &baixo);
 
-    // Nível Mestre - Funções Recursivas e Loops Aninhados
-    // Sugestão: Substitua as movimentações das peças por funções recursivas.
-    // Exemplo: Crie uma função recursiva para o movimento do Bispo.
+                for (torre = 1; torre <= baixo; torre ++)
+                {
+                    printf("Torre se movendo: %d casa para baixo\n", torre);
+                }
 
-    // Sugestão: Implemente a movimentação do Cavalo utilizando loops com variáveis múltiplas e condições avançadas.
-    // Inclua o uso de continue e break dentro dos loops.
+            } else
+            {
+                printf("Opção errada, tente novamente!");
+            }
+
+            //codigo para o bispo:
+            printf("\nPra qual direção voçê deseja que o bispo se mova?\n");
+            printf("1-Diagonal direita avançando\n2-Diagonal esquerda avançando\n3-diagonal direita recuando\n4-diagonal esquerda recuando\n");
+            printf("Selecione a opção desejada:");
+            scanf("%d", &direcao);
+            //codigo para o bispo:
+            if(direcao == 1)
+            {
+                printf("Quantas casas voce quer que o bispo se mova para diagonal direita avançando(max 7 casas)?\n");
+                scanf("%d", &diagonaldc);
+            
+                while (bispo <= diagonaldc)
+                {
+                    printf("bispo se movendo: %d casa para cima\n", bispo);
+                    printf("bispo se movendo: %d casa para direita\n", bispo);
+                    bispo ++;
+                }
+                              
+            } else if (direcao == 2)
+            {
+                printf("Quantas casas voce quer que o bispo se mova para diagonal esquerda avançando(max 7 casas)?\n");
+                scanf("%d", &diagonalec);
+
+                while (bispo <= diagonalec)
+                {
+                    printf("bispo se movendo: %d casa para cima\n", bispo);
+                    printf("bispo se movendo: %d casa para esquerda\n", bispo);
+                    bispo ++;
+                }
+
+            } else if (direcao == 3)
+            {
+                printf("Quantas casas voce quer que o bispo se mova para diagonal direita recuando(max 7 casas)?\n");
+                scanf("%d", &diagonaldb);
+
+                while (bispo <= diagonaldb)
+                {
+                    printf("bispo se movendo: %d casa para baixo\n", bispo);
+                    printf("bispo se movendo: %d casa para direita\n", bispo);
+                    bispo ++;
+                }
+                
+            } else if (direcao == 4)
+            {
+                printf("Quantas casas voce quer que o bispo se mova para diagonal esquerda recuando(max 7 casas)?\n");
+                scanf("%d", &diagonaleb);
+
+                while (bispo <= diagonaleb)
+                {
+                    printf("bispo se movendo: %d casa para baixo\n", bispo);
+                    printf("bispo se movendo: %d casa para esquerda\n", bispo);
+                    bispo ++;
+                }
+
+            } else
+            {
+                printf("Opção errada, tente novamente!");
+            }
+            
+            //codigo para o bispo:
+            printf("\nPra qual direção voçê deseja que a rainha se mova?\n");
+            printf("1-Direita\n2-Esquerda\n3-Cima\n4-baixo\n");
+            printf("5-Diagonal direita avançando\n6-Diagonal esquerda avançando\n7-diagonal direita recuando\n8-diagonal esquerda recuando\n");
+            printf("Selecione a opção desejada:");
+            scanf("%d", &direcao);
+            //codigo para o bispo:
+            if(direcao == 1)
+            {
+                printf("Quantas casas voce quer que a rainha se mova para direita(max 7 casas)?\n");
+                scanf("%d", &direita);
+
+                do {
+                printf("Rainha se movendo: %d casa para direita\n", rainha);
+                rainha++;
+                } while (rainha <= direita);
+                
+            } else if (direcao == 2)
+            {
+                printf("Quantas casas voce quer que a rainha se mova para esquerda(max 7 casas)?\n");
+                scanf("%d", &esquerda);
+
+                do {
+                printf("Rainha se movendo: %d casa para esquerda\n", rainha);
+                rainha++;
+                } while (rainha <= esquerda);
+
+            } else if (direcao == 3)
+            {
+                printf("Quantas casas voce quer que a rainha se mova para cima(max 7 casas)?\n");
+                scanf("%d", &cima);
+
+                do {
+                printf("Rainha se movendo: %d casa para cima\n", rainha);
+                rainha++;
+                } while (rainha <= cima);
+                              
+            } else if (direcao == 4)
+            {
+                printf("Quantas casas voce quer que a rainha se mova para baixo(max 7 casas)?\n");
+                scanf("%d", &baixo);
+
+                do {
+                printf("Rainha se movendo: %d casa para baixo\n", rainha);
+                rainha++;
+                } while (rainha <= baixo);
+
+            }
+
+            if(direcao == 5)
+            {
+                printf("Quantas casas voce quer que a rainha se mova para diagonal direita avançando(max 7 casas)?\n");
+                scanf("%d", &diagonaldc);
+
+                do {
+                printf("rainha se movendo: %d casa para cima\n", rainha);
+                printf("Rainha se movendo: %d casa para direita\n", rainha);
+                rainha++;
+                } while (rainha <= diagonaldc);
+                
+            } else if (direcao == 6)
+            {
+                printf("Quantas casas voce quer que a rainha se mova para diagonal esquerda avançando(max 7 casas)?\n");
+                scanf("%d", &diagonalec);
+
+                do {
+                printf("rainha se movendo: %d casa para cima\n", rainha);
+                printf("Rainha se movendo: %d casa para esquerda\n", rainha);
+                rainha++;
+                } while (rainha <= diagonalec);
+            
+            } else if (direcao == 7)
+            {
+                printf("Quantas casas voce quer que a rainha se mova para diagonal direita recuando(max 7 casas)?\n");
+                scanf("%d", &diagonaldb);
+
+                do {
+                printf("rainha se movendo: %d casa para baixo\n", rainha);
+                printf("Rainha se movendo: %d casa para direita\n", rainha);
+                rainha++;
+                } while (rainha <= diagonaldb);
+                
+            } else if (direcao == 8)
+            {
+                printf("Quantas casas voce quer que a rainha se mova para diagonal esquerda recuando(max 7 casas)?\n");
+                scanf("%d", &diagonaleb);
+
+                do {
+                printf("rainha se movendo: %d casa para baixo\n", rainha);
+                printf("Rainha se movendo: %d casa para esquerda\n", rainha);
+                rainha++;
+                } while (rainha <= diagonaleb);
+
+            } else
+            {
+                printf("Opção errada, tente novamente!");
+            }
+
+        break;
+
+        case 2:
+            printf("Regras\n");
+            printf("selecione a opção da direção e logo em seguida\nselecione quantas casas a peça ira se mover!");
+        break;
+
+        case 3:
+            printf("Você saiu do jogo!");
+        break;
+    
+        default:
+            printf("Opção errada, tente novamente!");
+        break;
+    }
 
     return 0;
 }
