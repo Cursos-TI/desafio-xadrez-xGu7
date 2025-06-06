@@ -2,7 +2,7 @@
 int main () {
 
     //variaveis:
-    int torre, opcao, direita, esquerda, cima, baixo, direcao, diagonaldc, diagonalec, diagonaldb, diagonaleb;
+    int torre, cavalo, opcao, opcao2, direita, esquerda, cima, baixo, direcao, diagonaldc, diagonalec, diagonaldb, diagonaleb, direitac, esquerdac, cimac, baixoc;
     int bispo = 1;
     int rainha = 1;
 
@@ -220,23 +220,79 @@ int main () {
 
             } else
             {
-                printf("Opção errada, tente novamente!");
+                printf("Opção errada, tente novamente!\n");
             }
 
-        break;
+        //Codigo para o cavalo:
+        printf("Escolha a posição que o cavalo vai se movimentar \n");
+        printf("1 - cima direita \n");
+        printf("2 - baixo direita \n");
+        printf("3 - cima esquerda \n");
+        printf("4 - baixo esquerda \n");
+        scanf("%d", &opcao2);
 
+        //codigo para o cavalo:
+        switch (opcao2)
+        {
+        case 1:
+            for (int i = 1; i < 2; i++)
+            {
+                for (int j = 0; j < 2; j++)
+                {
+                    printf("cima \n");
+                }
+                printf("Direita \n");
+            }
+            break;
         case 2:
-            printf("Regras\n");
-            printf("selecione a opção da direção e logo em seguida\nselecione quantas casas a peça ira se mover!");
-        break;
-
+            for (int i = 1; i < 2; i++)
+            {
+                for (int j = 0; j < 2; j++)
+                {
+                    printf("baixo \n");
+                }
+                printf("Direita \n");
+            }
+            break;
         case 3:
-            printf("Você saiu do jogo!");
-        break;
-    
+            for (int i = 1; i < 2; i++)
+            {
+                for (int j = 0; j < 2; j++)
+                {
+                    printf("cima \n");
+                }
+                printf("esquerda \n");
+            }
+            break;
+        case 4:
+            for (int i = 1; i < 2; i++)
+            {
+                for (int j = 0; j < 2; j++)
+                {
+                    printf("baixo \n");
+                }
+                printf("esquerda \n");
+            }
+            break;
+        
         default:
-            printf("Opção errada, tente novamente!");
+            printf("Opção invalida! \n");
+            break;
         break;
+    }
+
+    case 2:
+        printf("Regras\n");
+        printf("selecione a opção da direção e logo em seguida\nselecione quantas casas a peça ira se mover!");
+    break;
+
+    case 3:
+        printf("Você saiu do jogo!");
+    break;
+    
+    default:
+        printf("Opção errada, tente novamente!");
+    break;
     }
 
     return 0;
